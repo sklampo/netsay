@@ -131,6 +131,7 @@ while getopts ":c:hkp::sv" o; do
     k)
       echo "Shutting down netsay server ..."
       shutdown || abort
+      exit
       ;;
     p)
       port=${OPTARG}
