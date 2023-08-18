@@ -69,3 +69,9 @@ curl -s -H "Accept: text/plain" https://icanhazdadjoke.com/ | ./netsay -c localh
 ```shell
 jot -b yes 5 | ./netsay -c localhost -p 15034
 ```
+
+or
+
+```shell
+jot -b yes 5 | ./netsay -c localhost -p 15031
+```

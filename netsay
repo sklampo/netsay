@@ -72,7 +72,7 @@ function netsay_server() {
   [[ -n "${2}" ]] && debug_message="${debug_message} with voice ${2}"
   debug "${debug_message}"
 
-  nohup ncat -l "$1" -c "/usr/bin/say ${say_options}" --keep-open --max-conns 2 < /dev/null > /dev/null &
+  nohup ncat -l "$1" -c "/usr/bin/say ${say_options}" --keep-open --max-conns 4 < /dev/null > /dev/null &
 }
 
 function shutdown() {
@@ -99,7 +99,7 @@ function port_ready() {
 function netsay_client() {
   port_ready "${1}" "${2}" || abort "No netsay server listing to port ${2} on host ${1}"
 
-  cat | ncat "${1}" "${2}"
+  ncat "${1}" "${2}"
 }
 
 function preflight_checks() {
