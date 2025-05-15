@@ -47,7 +47,7 @@ This program contains both the server and client functionality.
 #### Basic usage
 
 ```shell
-echo "hello world" | ./netsay -c localhost
+./netsay -c localhost <<< "hello world"
 ```
 
 ### Example Gallery
@@ -55,7 +55,7 @@ echo "hello world" | ./netsay -c localhost
 #### Hello World, with "Grandpa" voice
 
 ```shell
-echo "hello world" | ./netsay -c localhost -p 15015
+./netsay -c localhost -p 15015 <<< "hello world"
 ```
 
 #### Dad jokes
