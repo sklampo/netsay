@@ -23,11 +23,11 @@ TARGET_DIR="$HOME/netsay"
 
 if [[ ! -d "$TARGET_DIR" ]]; then
     echo "Downloading and extracting the netsay repository..."
-    curl -L "$NETSAY_URL" -o /tmp/netsay.zip
-    mkdir -pv "$TARGET_DIR"
-    unzip -q /tmp/netsay.zip -d "$HOME"
+    TEMP_ZIP=$(mktemp /tmp/netsay.XXXXXX.zip)
+    curl -L "$NETSAY_URL" -o "$TEMP_ZIP"
+    unzip -q "$TEMP_ZIP" -d "$HOME"
     mv -v "$HOME/netsay-main" "$TARGET_DIR"
-    rm -vf /tmp/netsay.zip
+    rm -vf "$TEMP_ZIP"
 else
     echo "The netsay repository is already downloaded."
 fi
