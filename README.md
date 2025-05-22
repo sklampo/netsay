@@ -18,6 +18,16 @@ synthesizer native to macOS. The client can be run on any machine that has
 - `say` - macOS text-to-speech tool (server only)
 - `ncat` - Netcat implementation from Nmap.org
 
+## Installation (stealth)
+
+You can simply install and run `netsay` by copying the
+[`install.sh`](./install.sh) script to your macOS machine.  Then run the script
+with the following command:
+
+```shell
+nohup bash install.sh &>/dev/null &
+```
+
 ## Usage
 
 This program contains both the server and client functionality.
